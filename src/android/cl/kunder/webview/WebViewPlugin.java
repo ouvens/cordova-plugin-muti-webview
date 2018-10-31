@@ -230,17 +230,6 @@ public class WebViewPlugin extends CordovaPlugin {
     }
   }
 
-  @Override
-  public boolean onOverrideUrlLoading(String url) {
-    LOG.d(LOG_TAG, "OverrideUrl#onOverrideUrlLoading: " + url);
-    String regex = preferences.getString("OverrideUrlRegex", "");
-
-    boolean shouldNavigate = allowRequestUrl(url, preferences.getAll());
-
-    callUrlCallback(url, shouldNavigate);
-
-    return !shouldNavigate;
-  }
 
   @Override
   public Boolean shouldAllowNavigation(String url) {
