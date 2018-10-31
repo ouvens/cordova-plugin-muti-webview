@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
   id="cordova-plugin-muti-webview"
-  version="3.0.4">
+  version="3.0.5">
   <name>Cordova Muti Webview</name>
   <description>Fork of kunder.cl webview plugin</description>
   <license>Apache 2.0</license>

@@ -28,6 +28,7 @@ public class WebViewActivity extends CordovaActivity {
         //Aqui debo crear el loading
     activity2 = this;
     WebViewPlugin.webViewActivity = this;
+    setTheme(android.R.style.Theme_Light_NoTitleBar);
     Bundle b = getIntent().getExtras();
     String url = b.getString("url");
     Boolean shouldShowLoading = false;
@@ -101,12 +102,10 @@ public class WebViewActivity extends CordovaActivity {
         ProgressBar progressBar = new ProgressBar(activity2,null,android.R.attr.progressBarStyle);
 
         LinearLayout linearLayout = new LinearLayout(activity2);
-        linearLayout.setBackgroundResource(Color.parseColor("#ffffff"));
         linearLayout.setBackgroundColor(Color.parseColor("#ffffff"));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         RelativeLayout layoutPrincipal = new RelativeLayout(activity2);
-        layoutPrincipal.setBackgroundResource(Color.parseColor("#ffffff"));
         layoutPrincipal.setBackgroundColor(Color.parseColor("#ffffff"));
 
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
