@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-  id="cordova-plugin-second-webview"
-  version="2.11.4">
-  <name>Cordova Second Webview</name>
+  id="cordova-plugin-muti-webview"
+  version="3.0.3">
+  <name>Cordova Muti Webview</name>
   <description>Fork of kunder.cl webview plugin</description>
   <license>Apache 2.0</license>
   <keywords>cordova,webview</keywords>
