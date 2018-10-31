@@ -97,7 +97,7 @@ public class WebViewActivity extends CordovaActivity {
     activity2.runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        dialog = new Dialog(activity2,android.R.style.Theme.Light.NoTitleBar);
+        dialog = new Dialog(activity2,android.R.style.Theme_Light_NoTitleBar);
         ProgressBar progressBar = new ProgressBar(activity2,null,android.R.attr.progressBarStyle);
 
         LinearLayout linearLayout = new LinearLayout(activity2);
