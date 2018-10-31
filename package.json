@@ -1,0 +1,29 @@
+{
+  "name": "cordova-plugin-muti-webview",
+  "version": "2.11.4",
+  "description": "Fork of kunder.cl webview plugin",
+  "cordova": {
+    "id": "cordova-plugin-muti-webview",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ouvens/cordova-plugin-muti-webview.git"
+  },
+  "keywords": [
+    "cordova",
+    "webview",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Walid Owais",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/ouvens/cordova-plugin-muti-webview/issues"
+  },
+  "homepage": "https://github.com/ouvens/cordova-plugin-muti-webview#readme"
+}
