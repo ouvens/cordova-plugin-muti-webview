@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-muti-webview",
-  "version": "3.1.7",
+  "version": "3.1.8",
   "description": "Fork of kunder.cl webview plugin",
   "cordova": {
     "id": "cordova-plugin-muti-webview",
