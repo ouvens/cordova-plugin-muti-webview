@@ -99,7 +99,7 @@ public class WebViewActivity2 extends CordovaActivity {
       @Override
       public void run() {
         dialog = new Dialog(activity2,android.R.style.Theme_Light_NoTitleBar);
-        ProgressBar progressBar = new ProgressBar(activity2,null,android.R.attr.progressBarStyle);
+        ProgressBar progressBar = new ProgressBar(activity2,null,android.R.attr.progressBarStyleSmall);
 
         LinearLayout linearLayout = new LinearLayout(activity2);
         linearLayout.setBackgroundColor(Color.parseColor("#ffffff"));
