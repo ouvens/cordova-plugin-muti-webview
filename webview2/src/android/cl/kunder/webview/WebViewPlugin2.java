@@ -60,14 +60,15 @@ public class WebViewPlugin2 extends CordovaPlugin {
     if (action.equals("show") && args.length() > 0) {
       LOG.d(LOG_TAG, "Show Web View");
       final String url = args.getString(0);
+      final String errorUrl = args.getString(1);
       Boolean shouldShowLoading = false;
       try{
-        shouldShowLoading = args.getBoolean(1);
+        shouldShowLoading = args.getBoolean(2);
       }
       catch(Exception e){
       }
       if(!"".equals(url)) {
-        showWebView(url, shouldShowLoading);
+        showWebView(url, errorUrl, shouldShowLoading);
         JSONObject r = new JSONObject();
         r.put("responseCode", "ok");
         callbackContext.success(r);
@@ -158,10 +159,11 @@ public class WebViewPlugin2 extends CordovaPlugin {
     return true;
   }
 
-  private void showWebView(final String url, Boolean shouldShowLoading) {
+  private void showWebView(final String url, final String errorUrl, Boolean shouldShowLoading) {
     LOG.d(LOG_TAG, "Url: " + url);
     Intent i = new Intent(this.cordova.getActivity(), WebViewActivity2.class);
     i.putExtra("url", url);
+    i.putExtra("errorUrl", errorUrl);
     i.putExtra("shouldShowLoading", shouldShowLoading);
     this.cordova.getActivity().startActivity(i);
   }

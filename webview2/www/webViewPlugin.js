@@ -2,12 +2,12 @@
 'use strict';
 
 module.exports = (function() {
-  var _show = function(url, successCallback, errorCallback, loading) {
+  var _show = function(url, successCallback, errorCallback, loading, errorUrl) {
     if(loading) {
-      cordova.exec(successCallback, errorCallback, 'WebViewPlugin2', 'show', [url, loading]);
+        cordova.exec(successCallback, errorCallback, 'WebViewPlugin2', 'show', [url, errorUrl, loading]);
     }
     else {
-      cordova.exec(successCallback, errorCallback, 'WebViewPlugin2', 'show', [url]);
+        cordova.exec(successCallback, errorCallback, 'WebViewPlugin2', 'show', [url, errorUrl]);
     }
   };
 

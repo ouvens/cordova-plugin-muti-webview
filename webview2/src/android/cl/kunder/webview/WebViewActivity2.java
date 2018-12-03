@@ -1,5 +1,8 @@
 package cl.kunder.webview;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -83,6 +86,7 @@ public class WebViewActivity2 extends CordovaActivity {
     });
   }
 
+
   @Override
   protected void init() {
     super.init();
@@ -138,6 +142,27 @@ public class WebViewActivity2 extends CordovaActivity {
     });
 
     return true;
+  }
+
+
+  @Override
+  public Object onMessage(String id, Object data) {
+
+    if ("onPageFinished".equals(id)) {
+        hideLoading();
+    } else if ("onReceivedError".equals(id)) {
+        Bundle b = getIntent().getExtras();
+        String errorUrl = b.getString("errorUrl");
+        if (errorUrl != "") {
+            appView.loadUrl((errorUrl.matches("^(.*://|javascript:)[\\s\\S]*$")?"":"file:///android_asset/www/")+errorUrl);
+        }
+        hideLoading();
+    } else if ("exit".equals(id)) {
+        hideLoading();
+        finish();
+    }
+
+    return null;
   }
 
   public static boolean hideLoading() {
