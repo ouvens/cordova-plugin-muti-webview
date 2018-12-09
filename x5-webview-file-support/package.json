@@ -1,0 +1,39 @@
+
+{
+    "name": "cordova-x5webview-plugin-file-support",
+    "version": "1.0.6",
+    "description": "Changes the default WebView to TBS X5 WebView",
+    "cordova": {
+      "id": "cordova-x5webview-plugin-file-support",
+      "platforms": [
+        "android"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Im-Kevin/cordova.plugins.X5WebView.git"
+    },
+    "keywords": [
+      "cordova",
+      "chromium",
+      "x5engine",
+      "webview",
+      "engine",
+      "ecosystem:cordova",
+      "cordova-android",
+      "TBS"
+    ],
+    "engines": [{
+      "name": "cordova-android",
+      "version": ">=4"
+    }, {
+      "name": "cordova-plugman",
+      "version": ">=4.2.0"
+    }],
+    "author": "",
+    "license": "Apache 2.0",
+    "bugs": {
+      "url": "https://github.com/Im-Kevin/cordova.plugins.X5WebView"
+    },
+    "homepage": "https://github.com/Im-Kevin/cordova.plugins.X5WebView"
+  }

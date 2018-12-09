@@ -1,0 +1,8 @@
+// Plugin configuration
+
+cdvPluginPostBuildExtras.add({
+
+    android.defaultConfig.ndk {
+          abiFilters "armeabi","armeabi-v7a","x86"
+    }
+});
