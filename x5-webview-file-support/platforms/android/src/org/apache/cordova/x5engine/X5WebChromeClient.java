@@ -78,6 +78,11 @@ public class X5WebChromeClient extends WebChromeClient {
     public X5WebChromeClient(X5WebViewEngine parentEngine) {
         this.parentEngine = parentEngine;
         appContext = parentEngine.webView.getContext();
+        if (parentEngine.webView.getX5WebViewExtension() != null) {
+            parentEngine.webView.getX5WebViewExtension().setHorizontalScrollBarEnabled(false);//水平不显示滚动按钮
+            parentEngine.webView.getX5WebViewExtension().setVerticalScrollBarEnabled(false); //垂直不显示滚动按钮
+        }
+
         dialogsHelper = new CordovaDialogsHelper(appContext);
     }
 
