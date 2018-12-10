@@ -1,7 +1,7 @@
 
 {
     "name": "cordova-x5webview-plugin-file-support",
-    "version": "1.0.6",
+    "version": "1.0.8",
     "description": "Changes the default WebView to TBS X5 WebView",
     "cordova": {
       "id": "cordova-x5webview-plugin-file-support",

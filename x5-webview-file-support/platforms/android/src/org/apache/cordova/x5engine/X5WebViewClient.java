@@ -41,6 +41,7 @@ import org.apache.cordova.PluginManager;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Hashtable;
+import android.content.Intent;
 
 
 /**
@@ -55,6 +56,8 @@ public class X5WebViewClient extends WebViewClient {
     private static final String TAG = "X5WebViewClient";
     protected final X5WebViewEngine parentEngine;
     private boolean doClearHistory = false;
+    private boolean appHasStarted = false;  // app是否拉起，防止重复拉起
+
     boolean isCurrentlyLoading;
 
     /** The authorization tokens. */
@@ -74,6 +77,35 @@ public class X5WebViewClient extends WebViewClient {
      */
 	@Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        // parentEngine.client.onNavigationAttempt(url);
+        return openApp(url);
+    }
+
+    //判断app是否安装
+    private boolean isInstall(Intent intent) {
+        return parentEngine.cordova.getActivity().getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY).size() > 0;
+    }
+
+    //打开app
+    private boolean openApp(String url) {
+        try {
+            if (!url.startsWith("http") || !url.startsWith("https") || !url.startsWith("ftp")) {
+            	Uri uri = Uri.parse(url);
+                String host = uri.getHost();
+                String scheme = uri.getScheme();
+                //host 和 scheme 都不能为null
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                if (isInstall(intent) && !appHasStarted) {
+                    parentEngine.cordova.getActivity().startActivity(intent);
+                    appHasStarted = true;
+                    return parentEngine.client.onNavigationAttempt(url);
+                } else {
+                    return parentEngine.client.onNavigationAttempt(url);
+                }
+            }
+        } catch (Exception e) {
+            return parentEngine.client.onNavigationAttempt(url);
+        }
         return parentEngine.client.onNavigationAttempt(url);
     }
 
