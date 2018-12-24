@@ -170,7 +170,7 @@ public class WebViewActivity extends CordovaActivity {
     activity2.runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        dialog.hide();
+        dialog.dismiss();
       }
     });
     return true;
